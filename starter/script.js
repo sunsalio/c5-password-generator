@@ -90,11 +90,37 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  var length = prompt("Enter the desired password length:");
+  if (length < 12) {
+    alert("Password length should be at least 12 characters.");
+    return getPasswordOptions();
+  }
 
+  var includeLowercase = confirm("Include lowercase letters?");
+  var includeUppercase = confirm("Include uppercase letters?");
+  var includeNumbers = confirm(" Include numbers?");
+  var includeSpecial = confirm("Include special characters?");
+
+  if (!(includeLowercase || includeUppercase || includeNumbers || includeSpecial)) {
+    alert("At least one character type should be included.");
+    return getPasswordOptions();
+  }
+  return {
+    length: length,
+    includeLowercase: includeLowercase,
+    includeUppercase: includeUppercase,
+    includeNumbers: includeNumbers,
+    includeSpecial: includeSpecial,
+  };
 }
+var passwordOptions = getPasswordOptions
+console.log(passwordOptions);
 
 // Function for getting a random element from an array
-function getRandom(arr) {
+var allCharacters = [[specialCharacters],[numericCharacters],[lowerCasedCharacters],[upperCasedCharacters]]
+
+function getRandom(allCharacters) {
+  if (allCharacters.length === 0);
 
 }
 
