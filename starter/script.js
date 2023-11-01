@@ -148,7 +148,7 @@ function generatePassword(options) {
   }
   if (characters.length === 0) {
     alert("No character set selected. Please include at least one character set.");
-    return generatePassword(getPasswordOptions()); // Recursively call for valid options
+    return generatePassword(getPasswordOptions()); 
   }
   var password = '';
    for (var i = 0; i < options.length; i++) {
@@ -157,6 +157,8 @@ function generatePassword(options) {
   }
   return password;
 }
+
+// Generates password in confirm rather rather input pass box
 // var passwordOptions = getPasswordOptions();
 // if (typeof passwordOptions === 'object') {
 //   var password = generatePassword(passwordOptions);
