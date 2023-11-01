@@ -105,6 +105,7 @@ function getPasswordOptions() {
     alert("At least one character type should be included.");
     return getPasswordOptions();
   }
+  // return user choice
   return {
     length: length,
     includeLowercase: includeLowercase,
@@ -120,9 +121,12 @@ console.log(passwordOptions);
 var allCharacters = [[specialCharacters],[numericCharacters],[lowerCasedCharacters],[upperCasedCharacters]]
 
 function getRandom(allCharacters) {
-  if (allCharacters.length === 0);
 
+  var randomIndex = Math.floor(Math.random() * allCharacters.length);
+  return allCharacters[randomIndex];
 }
+// var randomElement = getRandom(allCharacters);
+// console.log(randomElement)
 
 // Function to generate password with user input
 function generatePassword() {
